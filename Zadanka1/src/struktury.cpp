@@ -3,7 +3,7 @@
 //
 #include<iostream>
 using namespace std;
-
+/*
 struct samochod{
     string marka;
     string model;
@@ -31,5 +31,56 @@ int main(){
     }
     int a= najnowszy(samochody,4);
     cout<<samochody[a].rok_produkcji;
+    return 0;
+}*/
+
+class PolaFigur{
+private :
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    double r = 0;
+    int pole_powierzchni_prostopadloscianu(){
+        int wynik = 2*a*b+2*b*c+2*a*c;
+        return wynik;
+    }
+    double objetosc_kuli(){
+        double wynik =(4./3)*3.14*r*r*r;
+        return wynik;
+    }
+    void funkcja_kwad(){
+        cout<<"f(x) = "<<a<<" x^2 + "<<b<<" x + "<<c<<endl;
+    }
+public:
+    void zmienzmienne(int a1,int b2,int c3){
+        a=a1;
+        b=b2;
+        c=c3;
+    }
+    void zmienr(double r1){
+        r=r1;
+    }
+    void uruchom(){
+        int wynik1;
+        double wynik2;
+        wynik1=pole_powierzchni_prostopadloscianu();
+        wynik2=objetosc_kuli();
+        cout<<"pp prostopadl = "<<wynik1<<endl;
+        cout<<"objetosc kuli = "<<wynik2<<endl;
+        funkcja_kwad();
+    }
+};
+
+int main(){
+    PolaFigur nowyObiekt ;
+    int a,b,c;
+    double r;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    cin>>r;
+    nowyObiekt.zmienzmienne(a,b,c);
+    nowyObiekt.zmienr(r);
+    nowyObiekt.uruchom();
     return 0;
 }
