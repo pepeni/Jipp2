@@ -11,3 +11,7 @@ add_subdirectory(Zadanka1)
 add_subdirectory(E1NoCopyingConstructor)
 add_subdirectory(Zadanka2)
 add_subdirectory(friend)
+add_subdirectory(Lab7)
+add_subdirectory(Zadanka3)
+add_subdirectory(Fiszki)
+

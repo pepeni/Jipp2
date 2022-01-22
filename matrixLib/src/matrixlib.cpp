@@ -50,7 +50,8 @@ double ** subtractMatrix(double ** matrix1, double ** matrix2, int rows, int col
 }
 
 double ** multiplyMatrix(double ** matrix1, double ** matrix2, int rowsA, int columnsA, int columnsB){
-    int i,j,k, suma;
+    int i,j,k;
+    double suma;
     double ** matrixret = new double * [rowsA];
     for(i=0;i<rowsA;i++){matrixret[i] = new double [columnsB];}
     for(i=0;i<rowsA;i++){

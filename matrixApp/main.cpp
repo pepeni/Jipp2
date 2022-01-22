@@ -20,7 +20,7 @@ int main(int argc, char* argv[]){
             argument = argv[1];
             if (argument=="addMatrix"){start=true;addMatrixb=true;}
             else if (argument=="subtractMatrix"){start=true;subtractMatrixb=true;}
-            else if (argument=="multiplyMatrix"){start=true;multiplyMatrixb=true;}
+            else if (argument=="1"){start=true;multiplyMatrixb=true;}
             else if (argument=="multiplyByScalar"){start=true;multiplyByScalarb=true;}
             else if (argument=="transpozeMatrix"){start=true;transpozeMatrixb=true;}
             else if (argument=="powerMatrix"){start=true;powerMatrixb=true;}
