@@ -7,6 +7,7 @@
 #include "Program.h"
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -83,7 +84,7 @@ void Program::draw() {
 
 void Program::show_vector() {
     string selected_question = "", selected_option = "", waiting_var = "";
-    int selected_q = 0, selected_o = 0;
+    long selected_q = 0, selected_o = 0;
 
     int vector_lenght = flashcard_list.size();
     if(vector_lenght > 0) {
@@ -96,7 +97,7 @@ void Program::show_vector() {
 
         try {
             cin >> selected_question;
-            selected_q = stoi( selected_question );
+            selected_q = atoi( selected_question.c_str() );
 
         }
         catch ( const invalid_argument &e ) {
@@ -106,6 +107,7 @@ void Program::show_vector() {
         if( selected_q >= vector_lenght || selected_q < 0 ){
             cout << "\nliczba spoza zakresu. " << '\n';
             show_vector();
+            return;
         }
 
         cout << "Co chcesz zrobic z pytaniem: '" << flashcard_list.at(selected_q).get_question() << "?" << endl;
@@ -116,7 +118,7 @@ void Program::show_vector() {
 
         try {
             cin >> selected_option;
-            selected_o = stoi( selected_option );
+            selected_o = atoi( selected_option.c_str() );
         }
         catch ( const invalid_argument &e ) {
             cout << "\nwpisz liczbe odpowiadajaca opcji  " << '\n';
@@ -126,6 +128,7 @@ void Program::show_vector() {
         if( selected_o > 3 || selected_o < 1 ){
             cout << "\nliczba spoza zakresu. " << '\n';
             show_vector();
+            return;
         }
 
         else if( selected_o == 1 ) {
